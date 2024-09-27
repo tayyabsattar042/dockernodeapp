@@ -41,9 +41,9 @@ pipeline {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockernodeappjenkins', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                         sh '''
-                           docker stop tayyab042/docker-nodejs-repo || true
-                           docker rm tayyab042/docker-nodejs-repo || true
-                           docker run -p 3011:3000 --name tayyab042/docker-nodejs-repo ${DOCKER_IMAGE}:latest
+                           docker stop trusting_sutherland || true
+                           docker rm trusting_sutherland|| true
+                           docker run -p 3011:3000 --name trusting_sutherland ${DOCKER_IMAGE}:latest
                         '''
                     }
                 }
