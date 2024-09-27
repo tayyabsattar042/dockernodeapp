@@ -6,7 +6,7 @@ pipeline {
     }
     stages {
         stage('Clone') {
-            steps { git url: 'https://github.com/tayyabsattar042/dockernodeapp.git' }
+            steps { git url: 'https://github.com/tayyabsattar042/dockernodeapp.git'}
         }
 
         stage('Deploy') {
