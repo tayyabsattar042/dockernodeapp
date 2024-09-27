@@ -40,10 +40,11 @@ pipeline {
             steps {
                 script {
                     withCredentials([usernamePassword(credentialsId: 'dockernodeappjenkins', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
-                        sh 
-                       ' sudo docker stop tayyab042/docker-nodejs-repo || true '
-                       ' suod docker rm tayyab042/docker-nodejs-repo || true '
-                       ' sudo docker run -p 3011:3000 --name tayyab042/docker-nodejs-repo ${DOCKER_IMAGE}:latest '
+                        sh '''
+                           sudo docker stop tayyab042/docker-nodejs-repo || true
+                           sudo docker rm tayyab042/docker-nodejs-repo || true
+                           sudo docker run -p 3011:3000 --name tayyab042/docker-nodejs-repo ${DOCKER_IMAGE}:latest
+                        '''
                     }
                 }
             }
