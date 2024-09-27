@@ -39,7 +39,7 @@ pipeline {
         stage('Deploy') {
             steps {
                 script {
-                    withCredentials([usernamePassword(credentialsId: 'docker_cred', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
+                    withCredentials([usernamePassword(credentialsId: 'dockernodeappjenkins', passwordVariable: 'DOCKER_PASSWORD', usernameVariable: 'DOCKER_USERNAME')]) {
                         sh '''
                         docker stop tayyab042/docker-nodejs-repo || true
                         docker rm tayyab042/docker-nodejs-repo || true
